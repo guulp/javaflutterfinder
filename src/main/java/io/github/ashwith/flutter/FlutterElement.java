@@ -43,11 +43,11 @@ public class FlutterElement extends RemoteWebElement {
      * @return Stringify map
      */
     public String serialize(final Map<String, Object> rawMap) {
-        final JsonPrimitive localInstance = new JsonPrimitive(false);
+        final JsonPrimitive localInstance = new JsonPrimitive(String.valueOf(false));
         Map<String, Object> tempMap = new HashMap<>();
         rawMap.forEach(
                 (key, value) -> {
-                    if (value instanceof String || value instanceof Integer) {
+                    if (value instanceof String || value instanceof Integer || value instanceof Boolean) {
                         tempMap.put(key, new JsonPrimitive(String.valueOf(value)));
                     } else if (value instanceof JsonElement) {
                         tempMap.put(key, value);
