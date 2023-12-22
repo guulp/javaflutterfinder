@@ -85,8 +85,8 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
     public FlutterElement byAncestor(FlutterElement of, FlutterElement matching, boolean matchRoot, boolean firstMatchOnly) {
         Map<String, Object> matchIdentifier = new HashMap<>(ImmutableMap.of(
                 FINDER_TYPE, "Ancestor",
-                "matchRoot", Boolean.toString(matchRoot),
-                "firstMatchOnly", Boolean.toString(firstMatchOnly)
+                "matchRoot", "true",
+                "firstMatchOnly", "false"
         ));
         matchIdentifier.put("of", of.getRawMap());
         matchIdentifier.put("matching", matching.getRawMap());
@@ -100,8 +100,8 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
     public FlutterElement byDescendant(FlutterElement of, FlutterElement matching, boolean matchRoot, boolean firstMatchOnly) {
         Map<String, Object> matchIdentifier = new HashMap<>(ImmutableMap.of(
                 FINDER_TYPE, "Descendant",
-                "matchRoot", Boolean.toString(matchRoot),
-                "firstMatchOnly", Boolean.toString(firstMatchOnly)
+                "matchRoot", "true",
+                "firstMatchOnly", "false"
         ));
         matchIdentifier.put("of", of.getRawMap());
         matchIdentifier.put("matching", matching.getRawMap());
