@@ -51,7 +51,7 @@ public class FlutterElement extends RemoteWebElement {
                         tempMap.put(key, new JsonPrimitive(String.valueOf(value)));
                     } else if (value instanceof JsonElement) {
                         tempMap.put(key, value);
-                    } else if(value instanceof Map<String, Object>) {
+                    } else if(value instanceof Map) {
                         tempMap.put(key, gson.toJson(value));
                     } else {
                         tempMap.put(key, localInstance);
