@@ -17,7 +17,7 @@ jobs:
         run: mvn --batch-mode --update-snapshots package
 
       - name: Display GitHub Workspace
-        run: echo "GitHub Workspace: $GITHUB_WORKSPACE"
+        run: echo "GitHub Workspace ${GITHUB_WORKSPACE}"
         
       - name: Publish Artifact
         uses: actions/upload-artifact@v2
