@@ -47,7 +47,7 @@ public class FlutterElement extends RemoteWebElement {
         Map<String, Object> tempMap = new HashMap<>();
         rawMap.forEach(
                 (key, value) -> {
-                    if (value instanceof String || value instanceof Integer || value instanceof Boolean) {
+                    if (value instanceof String || value instanceof Integer) {
                         tempMap.put(key, new JsonPrimitive(String.valueOf(value)));
                     } else if (value instanceof JsonElement) {
                         tempMap.put(key, value);
