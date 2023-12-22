@@ -32,7 +32,7 @@ public class FlutterElement extends RemoteWebElement {
      *
      * @return raw data map
      */
-    protected Map<String, Object> getRawMap() {
+    public Map<String, Object> getRawMap() {
         return rawMap;
     }
 
@@ -42,7 +42,7 @@ public class FlutterElement extends RemoteWebElement {
      * @param rawMap serializing map
      * @return Stringify map
      */
-    private String serialize(final Map<String, Object> rawMap) {
+    public String serialize(final Map<String, Object> rawMap) {
         final JsonPrimitive localInstance = new JsonPrimitive(false);
         Map<String, Object> tempMap = new HashMap<>();
         rawMap.forEach(
