@@ -18,6 +18,9 @@ jobs:
 
       - name: Display GitHub Workspace
         run: echo "GitHub Workspace ${GITHUB_WORKSPACE}"
+
+      - name: List GitHub Workspace
+        run: ls $GITHUB_WORKSPACE
         
       - name: Publish Artifact
         uses: actions/upload-artifact@v2
