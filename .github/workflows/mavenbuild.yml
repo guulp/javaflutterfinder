@@ -1,6 +1,7 @@
 name: Java CI
 
-on: [push]
+on:
+  [push, workflow_dispatch]
 
 jobs:
   build:
@@ -15,3 +16,15 @@ jobs:
           distribution: 'temurin'
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
+
+      - name: Display GitHub Workspace
+        run: echo "GitHub Workspace ${GITHUB_WORKSPACE}"
+
+      - name: List GitHub Workspace
+        run: ls $GITHUB_WORKSPACE/target
+
+      - name: Publish Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jar-file
+          path: ${{ github.workspace }}/**/*.jar
